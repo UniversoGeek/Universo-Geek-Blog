@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universo Geek</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="notificacao-sino" onclick="clicarSino()">
+  🔔
+</div>
+
+  <header>
+    <h1>Universo Geek</h1>
+
+    <p class="descricao">
+      Curiosidades, mistérios da internet, jogos antigos e tecnologia.
+    </p>
+  </header>
+
+<div class="newsletter">
+  <h2>Receba atualizações do Universo Geek!</h2>
+
+  <input type="email" id="emailInput" placeholder="Seu e-mail">
+
+  <button onclick="enviarNewsletter()">Inscrever</button>
+
+  <p id="newsletterStatus"></p>
+</div>
+
+  <main>
+
+    <div class="post-preview">
+      <h2>
+        <a href="posts/youtube.html">
+          O primeiro vídeo do YouTube continua online até hoje
+        </a>
+      </h2>
+
+      <p class="data">
+        Publicado em 22 de agosto de 2020
+      </p>
+
+      <p>
+        Muita gente não sabe, mas o primeiro vídeo da história do YouTube...
+      </p>
+    </div>
+
+    <div class="post-preview">
+      <h2>
+        <a href="posts/minecraft.html">
+          O servidor mais antigo de Minecraft ainda pode estar online
+        </a>
+      </h2>
+
+      <p class="data">
+        Publicado em 18 de agosto de 2020
+      </p>
+
+      <p>
+        Existe um dos servidores mais antigos de Minecraft...
+      </p>
+    </div>
+
+      <div class="post-preview">
+      <h2>
+        <a href="posts/primeiro.html">
+          Sobre mim e o Universo Geek!
+        </a>
+      </h2>
+
+      <p class="data">
+        Publicado em 12 de agosto de 2020
+      </p>
+
+      <p>
+        Se você chegou até aqui, bem-vindo ao...
+      </p>
+    </div>
+
+  </main>
+
+</body>
+</html>
+
+<script>
+function enviarNewsletter(){
+    const input = document.getElementById("emailInput");
+    const status = document.getElementById("newsletterStatus");
+
+    if(input.value.trim() === ""){
+        status.innerText = "Insira um e-mail válido.";
+        return;
+    }
+
+    // simula envio
+    status.innerText = "Registrado com sucesso.";
+
+    // apaga o texto depois
+    setTimeout(() => {
+        input.value = "";
+        status.innerText = "";
+    }, 2000);
+}
+</script>
+
+<script>
+function clicarSino(){
+    alert("Sem novas notificações.");
+}
+</script>
