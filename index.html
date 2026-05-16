@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universo Geek</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="notificacao-sino" onclick="clicarSino()">
+  🔔
+</div>
+
+<div id="notificacao" class="notificacao"></div>
+
+  <header>
+    <h1>Universo Geek</h1>
+
+    <p class="descricao">
+      Curiosidades, mistérios da internet, jogos antigos e tecnologia.
+    </p>
+  </header>
+
+<div class="newsletter">
+  <h2>Receba atualizações do Universo Geek!</h2>
+
+  <input type="email" id="emailInput" placeholder="Seu e-mail">
+
+  <button onclick="enviarNewsletter()">Inscrever</button>
+
+  <p id="newsletterStatus"></p>
+</div>
+
+<main>
+
+
+    <div class="post-preview">
+
+    <h2>
+      <a href="posts/internet-esquece.html">
+        A internet nunca esquece… ou quase nunca
+      </a>
+    </h2>
+
+    <p class="data">
+      Publicado em 28 de agosto de 2020
+    </p>
+
+    <p>
+      Existe uma frase muito conhecida na internet: “a internet nunca esquece”...
+    </p>
+
+  </div>
+   
+  <div class="post-preview">
+
+    <h2>
+      <a href="posts/jogos-flash.html">
+        Jogos perdidos da internet
+      </a>
+    </h2>
+
+    <p class="data">
+      Publicado em 27 de agosto de 2020
+    </p>
+
+    <p>
+      Durante os anos 2000, milhares de jogos simples em Flash dominaram a internet...
+    </p>
+
+  </div>
+
+  <div class="post-preview">
+
+    <h2>
+      <a href="posts/internet.html">
+        A internet antiga e os arquivos que nunca desapareceram
+      </a>
+    </h2>
+
+    <p class="data">
+      Publicado em 26 de agosto de 2020
+    </p>
+
+    <p>
+      Mesmo com a evolução da internet, uma parte dos conteúdos antigos ainda existe em servidores espalhados pelo mundo...
+    </p>
+
+  </div>
+
+
+  <div class="post-preview">
+
+    <h2>
+      <a href="posts/youtube.html">
+        O primeiro vídeo do YouTube continua online até hoje
+      </a>
+    </h2>
+
+    <p class="data">
+      Publicado em 22 de agosto de 2020
+    </p>
+
+    <p>
+      Muita gente não sabe, mas o primeiro vídeo da história do YouTube...
+    </p>
+
+  </div>
+
+
+  <div class="post-preview">
+
+    <h2>
+      <a href="posts/minecraft.html">
+        O servidor mais antigo de Minecraft ainda pode estar online
+      </a>
+    </h2>
+
+    <p class="data">
+      Publicado em 18 de agosto de 2020
+    </p>
+
+    <p>
+      Existe um dos servidores mais antigos de Minecraft...
+    </p>
+
+  </div>
+
+
+  <div class="post-preview">
+
+    <h2>
+      <a href="posts/sobre.html">
+        Sobre mim e o Universo Geek!
+      </a>
+    </h2>
+
+    <p class="data">
+      Publicado em 12 de agosto de 2020
+    </p>
+
+    <p>
+      Se você chegou até aqui, bem-vindo ao...
+    </p>
+
+  </div>
+
+</main>
+</body>
+</html>
+
+<script>
+
+let tentativasNewsletter = parseInt(localStorage.getItem("newsletter_tentativas")) || 0;
+
+function enviarNewsletter(){
+
+    const input = document.getElementById("emailInput");
+
+    if(input.value.trim() === ""){
+        return;
+    }
+
+    tentativasNewsletter++;
+    localStorage.setItem("newsletter_tentativas", tentativasNewsletter);
+
+    input.value = "";
+
+    if(tentativasNewsletter === 5){
+        mostrarNotificacaoSecreta();
+    }
+}
+
+function mostrarNotificacaoSecreta(){
+
+    const notif = document.getElementById("notificacao");
+
+    const mensagemBinaria = `
+01010000 01000100 01000110
+01110010 01100101 01100111 01101001 01110011 01110100 01110010 01101111
+`;
+
+    notif.style.display = "block";
+
+    notif.innerHTML = `
+        <strong>NOTIFICAÇÃO DO SISTEMA</strong><br><br>
+        ${mensagemBinaria}<br><br>
+        <span>registro.pdf</span>
+    `;
+
+    setTimeout(() => {
+        notif.style.display = "none";
+    }, 15000);
+}
+
+</script>
+
+<script>
+function clicarSino(){
+    alert("Sem novas notificações.");
+}
+</script>
