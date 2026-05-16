@@ -154,3 +154,32 @@ a:hover{
 .notificacao-sino:hover{
     opacity:1;
 }
+.autor-universo{
+    color:#ff3b3b !important;
+    font-weight:bold;
+}
+body{
+    background:#0f0f0f;
+    color:#ddd;
+    font-family:Arial, sans-serif;
+    padding:20px;
+}
+
+.assinatura{
+    margin-top:30px;
+    color:#888;
+    font-style:italic;
+}
+.notificacao{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #111;
+    color: #00ff99;
+    padding: 15px;
+    border: 1px solid #00ff99;
+    font-family: monospace;
+    max-width: 300px;
+    display: none;
+    z-index: 9999;
+}
