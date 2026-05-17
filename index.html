@@ -129,6 +129,10 @@
 
         notif.innerHTML =
         "registrado com sucesso.";
+        
+        setTimeout(() => {
+          notif.classList.remove("ativa");
+        }, 3000);
 
       }
 
