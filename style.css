@@ -171,7 +171,9 @@ body{
     font-style:italic;
 }
 .notificacao{
+
     position: fixed;
+
     bottom: 20px;
     right: 20px;
 
@@ -182,13 +184,28 @@ body{
 
     padding: 15px;
 
+    width: 280px;
+
     font-family: monospace;
 
-    width: 300px;
+    box-shadow:
+    0 0 10px rgba(0,255,153,0.3);
 
-    display: none;
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: translateY(10px);
+
+    transition: 0.3s;
 
     z-index: 9999;
+}
 
-    box-shadow: 0 0 10px rgba(0,255,153,0.3);
+.notificacao.ativa{
+
+    opacity: 1;
+
+    transform: translateY(0);
+
 }
