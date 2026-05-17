@@ -194,8 +194,6 @@ function enviarNewsletter(){
 
     notif.style.display = "block";
 
-    // 🧠 PROGRESSÃO ARG
-
     if(tentativasNewsletter === 1){
 
         notif.innerHTML = `
@@ -424,12 +422,7 @@ function mostrarMensagemSecreta(){
   </div>
 
 </main>
-  <script>
-
-let tentativasNewsletter =
-parseInt(localStorage.getItem("newsletter_tentativas")) || 0;
-
-<script>
+ <script>
 
 let tentativasNewsletter =
 parseInt(localStorage.getItem("newsletter_tentativas")) || 0;
@@ -456,8 +449,6 @@ function enviarNewsletter(){
     input.value = "";
 
     notif.style.display = "block";
-
-    // 🧠 PROGRESSÃO ARG
 
     if(tentativasNewsletter === 1){
 
@@ -526,6 +517,10 @@ function mostrarMensagemSecreta(){
 
 }
 
+function clicarSino(){
+    alert("Sem novas notificações.");
+}
+
 </script>
 </body>
 </html>
@@ -552,23 +547,3 @@ function clicarSino(){
 
 </body>
 </html>
-
-<div class="newsletter">
-
-  <h2>Receba atualizações do blog</h2>
-
-  <input type="email" id="emailInput" placeholder="Seu e-mail">
-
-  <button type="button" onclick="enviarNewsletter()">
-    Inscrever
-  </button>
-
-</div>
-
-<div id="notificacao" class="notificacao"></div>
-
-<script>
-function clicarSino(){
-    alert("Sem novas notificações.");
-}
-</script>
