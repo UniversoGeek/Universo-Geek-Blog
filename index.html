@@ -160,6 +160,270 @@
   </div>
 
 </main>
+
+  <script>
+
+let tentativasNewsletter =
+parseInt(localStorage.getItem("newsletter_tentativas")) || 0;
+
+<script>
+
+let tentativasNewsletter =
+parseInt(localStorage.getItem("newsletter_tentativas")) || 0;
+
+function enviarNewsletter(){
+
+    const input =
+    document.getElementById("emailInput");
+
+    const notif =
+    document.getElementById("notificacao");
+
+    if(!input.value.trim()){
+        return;
+    }
+
+    tentativasNewsletter++;
+
+    localStorage.setItem(
+        "newsletter_tentativas",
+        tentativasNewsletter
+    );
+
+    input.value = "";
+
+    notif.style.display = "block";
+
+    // 🧠 PROGRESSÃO ARG
+
+    if(tentativasNewsletter === 1){
+
+        notif.innerHTML = `
+        registrado com sucesso.
+        `;
+
+    }
+
+    else if(tentativasNewsletter === 2){
+
+        notif.innerHTML = `
+        registrado novamente.
+        `;
+
+    }
+
+    else if(tentativasNewsletter === 3){
+
+        notif.innerHTML = `
+        requisição duplicada detectada.
+        `;
+
+    }
+
+    else if(tentativasNewsletter === 4){
+
+        notif.innerHTML = `
+        aguarde confirmação manual.
+        `;
+
+    }
+
+    else if(tentativasNewsletter === 5){
+
+        mostrarMensagemSecreta();
+
+    }
+
+}
+
+function mostrarMensagemSecreta(){
+
+    const notif =
+    document.getElementById("notificacao");
+
+    notif.innerHTML = `
+
+    <strong>SYSTEM MESSAGE</strong>
+
+    <br><br>
+
+    01100011 01101111 01101110 01110100 01100001 01110100 01100101
+
+    <br><br>
+
+    <a href="docs/registro_caso_07.pdf"
+    target="_blank"
+    style="color:#00ff99;">
+
+    abrir arquivo
+
+    </a>
+
+    `;
+
+}
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universo Geek</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="notificacao-sino" onclick="clicarSino()">
+  🔔
+</div>
+
+  <header>
+    <h1>Universo Geek</h1>
+
+    <p class="descricao">
+      Curiosidades, mistérios da internet, jogos antigos e tecnologia.
+    </p>
+  </header>
+
+<main>
+<div class="newsletter">
+
+  <h2>Receba atualizações do blog</h2>
+
+  <input
+    type="email"
+    id="emailInput"
+    placeholder="Seu e-mail"
+  >
+
+  <button
+    type="button"
+    onclick="enviarNewsletter()"
+  >
+    Inscrever
+  </button>
+
+</div>
+
+<div
+  id="notificacao"
+  class="notificacao"
+></div>
+  
+
+    <div class="post-preview">
+
+    <h2>
+      <a href="posts/internet-esquece.html">
+        A internet nunca esquece… ou quase nunca
+      </a>
+    </h2>
+
+    <p class="data">
+      Publicado em 28 de agosto de 2020
+    </p>
+
+    <p>
+      Existe uma frase muito conhecida na internet: “a internet nunca esquece”...
+    </p>
+
+  </div>
+   
+  <div class="post-preview">
+
+    <h2>
+      <a href="posts/jogos-flash.html">
+        Jogos perdidos da internet
+      </a>
+    </h2>
+
+    <p class="data">
+      Publicado em 27 de agosto de 2020
+    </p>
+
+    <p>
+      Durante os anos 2000, milhares de jogos simples em Flash dominaram a internet...
+    </p>
+
+  </div>
+
+  <div class="post-preview">
+
+    <h2>
+      <a href="posts/internet.html">
+        A internet antiga e os arquivos que nunca desapareceram
+      </a>
+    </h2>
+
+    <p class="data">
+      Publicado em 26 de agosto de 2020
+    </p>
+
+    <p>
+      Mesmo com a evolução da internet, uma parte dos conteúdos antigos ainda existe em servidores espalhados pelo mundo...
+    </p>
+
+  </div>
+
+
+  <div class="post-preview">
+
+    <h2>
+      <a href="posts/youtube.html">
+        O primeiro vídeo do YouTube continua online até hoje
+      </a>
+    </h2>
+
+    <p class="data">
+      Publicado em 22 de agosto de 2020
+    </p>
+
+    <p>
+      Muita gente não sabe, mas o primeiro vídeo da história do YouTube...
+    </p>
+
+  </div>
+
+
+  <div class="post-preview">
+
+    <h2>
+      <a href="posts/minecraft.html">
+        O servidor mais antigo de Minecraft ainda pode estar online
+      </a>
+    </h2>
+
+    <p class="data">
+      Publicado em 18 de agosto de 2020
+    </p>
+
+    <p>
+      Existe um dos servidores mais antigos de Minecraft...
+    </p>
+
+  </div>
+
+
+  <div class="post-preview">
+
+    <h2>
+      <a href="posts/sobre.html">
+        Sobre mim e o Universo Geek!
+      </a>
+    </h2>
+
+    <p class="data">
+      Publicado em 12 de agosto de 2020
+    </p>
+
+    <p>
+      Se você chegou até aqui, bem-vindo ao...
+    </p>
+
+  </div>
+
+</main>
   <script>
 
 let tentativasNewsletter =
@@ -263,6 +527,29 @@ function mostrarMensagemSecreta(){
 }
 
 </script>
+</body>
+</html>
+
+<div class="newsletter">
+
+  <h2>Receba atualizações do blog</h2>
+
+  <input type="email" id="emailInput" placeholder="Seu e-mail">
+
+  <button type="button" onclick="enviarNewsletter()">
+    Inscrever
+  </button>
+
+</div>
+
+<div id="notificacao" class="notificacao"></div>
+
+<script>
+function clicarSino(){
+    alert("Sem novas notificações.");
+}
+</script>
+
 </body>
 </html>
 
