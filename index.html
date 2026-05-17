@@ -12,12 +12,10 @@
 
 <body>
 
-  <!-- 🔔 SINO -->
   <div class="notificacao-sino" onclick="clicarSino()">
     🔔
   </div>
 
-  <!-- 🧠 HEADER -->
   <header>
 
     <h1>Universo Geek</h1>
@@ -47,10 +45,11 @@
       >
         Inscrever
       </button>
+      
+      <p id="newsletterMensagem" class="newsletter-msg"></p>
 
     </div>
 
-    <!-- 🔔 POPUP -->
     <div
       id="notificacao"
       class="notificacao"
@@ -96,7 +95,6 @@
 
   </main>
 
-  <!-- 🧠 SCRIPT -->
   <script>
 
     let tentativasNewsletter =
@@ -107,8 +105,8 @@
     const input =
     document.getElementById("emailInput");
 
-    const notif =
-    document.getElementById("notificacao");
+    const msg =
+    document.getElementById("newsletterMensagem");
 
     if(!input.value.trim()){
         return;
@@ -123,35 +121,32 @@
 
     input.value = "";
 
-    // 🔥 MOSTRA POPUP
-    notif.classList.add("ativa");
-
     // 🧠 PROGRESSÃO
 
     if(tentativasNewsletter === 1){
 
-        notif.innerHTML =
+        msg.innerHTML =
         "registrado com sucesso.";
 
     }
 
     else if(tentativasNewsletter === 2){
 
-        notif.innerHTML =
+        msg.innerHTML =
         "registrado novamente.";
 
     }
 
     else if(tentativasNewsletter === 3){
 
-        notif.innerHTML =
+        msg.innerHTML =
         "requisição duplicada detectada.";
 
     }
 
     else if(tentativasNewsletter === 4){
 
-        notif.innerHTML =
+        msg.innerHTML =
         "aguarde confirmação manual.";
 
     }
@@ -163,7 +158,6 @@
     }
 
 }
-
     function mostrarMensagemSecreta(){
 
     const notif =
