@@ -21,16 +21,6 @@
     </p>
   </header>
 
-<div class="newsletter">
-  <h2>Receba atualizações do Universo Geek!</h2>
-
-  <input type="email" id="emailInput" placeholder="Seu e-mail">
-
-  <button onclick="enviarNewsletter()">Inscrever</button>
-
-  <p id="newsletterStatus"></p>
-</div>
-
 <main>
 
 
@@ -151,10 +141,18 @@
 let tentativasNewsletter =
 parseInt(localStorage.getItem("newsletter_tentativas")) || 0;
 
+<script>
+
+let tentativasNewsletter =
+parseInt(localStorage.getItem("newsletter_tentativas")) || 0;
+
 function enviarNewsletter(){
 
     const input =
     document.getElementById("emailInput");
+
+    const notif =
+    document.getElementById("notificacao");
 
     if(!input.value.trim()){
         return;
@@ -169,12 +167,43 @@ function enviarNewsletter(){
 
     input.value = "";
 
-    console.log(
-        "Tentativa:",
-        tentativasNewsletter
-    );
+    notif.style.display = "block";
 
-    if(tentativasNewsletter === 5){
+    // 🧠 PROGRESSÃO ARG
+
+    if(tentativasNewsletter === 1){
+
+        notif.innerHTML = `
+        registrado com sucesso.
+        `;
+
+    }
+
+    else if(tentativasNewsletter === 2){
+
+        notif.innerHTML = `
+        registrado novamente.
+        `;
+
+    }
+
+    else if(tentativasNewsletter === 3){
+
+        notif.innerHTML = `
+        requisição duplicada detectada.
+        `;
+
+    }
+
+    else if(tentativasNewsletter === 4){
+
+        notif.innerHTML = `
+        aguarde confirmação manual.
+        `;
+
+    }
+
+    else if(tentativasNewsletter === 5){
 
         mostrarMensagemSecreta();
 
@@ -187,10 +216,10 @@ function mostrarMensagemSecreta(){
     const notif =
     document.getElementById("notificacao");
 
-    notif.style.display = "block";
-
     notif.innerHTML = `
+
     <strong>SYSTEM MESSAGE</strong>
+
     <br><br>
 
     01100011 01101111 01101110 01110100 01100001 01110100 01100101
@@ -204,7 +233,9 @@ function mostrarMensagemSecreta(){
     abrir arquivo
 
     </a>
+
     `;
+
 }
 
 </script>
