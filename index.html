@@ -13,8 +13,6 @@
   🔔
 </div>
 
-<div id="notificacao" class="notificacao"></div>
-
   <header>
     <h1>Universo Geek</h1>
 
@@ -148,54 +146,84 @@
   </div>
 
 </main>
-</body>
-</html>
+  <script>
 
-<script>
-
-let tentativasNewsletter = parseInt(localStorage.getItem("newsletter_tentativas")) || 0;
+let tentativasNewsletter =
+parseInt(localStorage.getItem("newsletter_tentativas")) || 0;
 
 function enviarNewsletter(){
 
-    const input = document.getElementById("emailInput");
+    const input =
+    document.getElementById("emailInput");
 
-    if(input.value.trim() === ""){
+    if(!input.value.trim()){
         return;
     }
 
     tentativasNewsletter++;
-    localStorage.setItem("newsletter_tentativas", tentativasNewsletter);
+
+    localStorage.setItem(
+        "newsletter_tentativas",
+        tentativasNewsletter
+    );
 
     input.value = "";
 
-    if(tentativasNewsletter === 5){
-        mostrarNotificacaoSecreta();
+    console.log(
+        "Tentativa:",
+        tentativasNewsletter
+    );
+
+    if(tentativasNewsletter >= 5){
+
+        mostrarMensagemSecreta();
+
     }
+
 }
 
-function mostrarNotificacaoSecreta(){
+function mostrarMensagemSecreta(){
 
-    const notif = document.getElementById("notificacao");
-
-    const mensagemBinaria = `
-01010000 01000100 01000110
-01110010 01100101 01100111 01101001 01110011 01110100 01110010 01101111
-`;
+    const notif =
+    document.getElementById("notificacao");
 
     notif.style.display = "block";
 
     notif.innerHTML = `
-        <strong>NOTIFICAÇÃO DO SISTEMA</strong><br><br>
-        ${mensagemBinaria}<br><br>
-        <span>registro.pdf</span>
-    `;
+    <strong>SYSTEM MESSAGE</strong>
+    <br><br>
 
-    setTimeout(() => {
-        notif.style.display = "none";
-    }, 15000);
+    01100011 01101111 01101110 01110100 01100001 01110100 01100101
+
+    <br><br>
+
+    <a href="docs/registro_caso_07.pdf"
+    target="_blank"
+    style="color:#00ff99;">
+
+    abrir arquivo
+
+    </a>
+    `;
 }
 
 </script>
+</body>
+</html>
+
+<div class="newsletter">
+
+  <h2>Receba atualizações do blog</h2>
+
+  <input type="email" id="emailInput" placeholder="Seu e-mail">
+
+  <button type="button" onclick="enviarNewsletter()">
+    Inscrever
+  </button>
+
+</div>
+
+<div id="notificacao" class="notificacao"></div>
 
 <script>
 function clicarSino(){
