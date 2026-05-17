@@ -209,3 +209,16 @@ body{
     transform: translateY(0);
 
 }
+.newsletter-msg{
+
+    margin-top: 10px;
+
+    color: #999;
+
+    font-size: 14px;
+
+    font-family: monospace;
+
+    min-height: 20px;
+
+}
