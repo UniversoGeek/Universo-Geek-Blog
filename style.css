@@ -59,7 +59,7 @@ a:hover{
     font-size: 12px;
     color: #777 !important;
     margin-top: 3px;
-    margin-bottom: 8px;
+    margin-bottom: 
 }
 .comentario{
     border-top:1px solid #333;
@@ -71,10 +71,11 @@ a:hover{
     color:#7aa2ff;
 }
 
-.comentario .hora{
-    color:#666;
-
-    font-size:13px;
+.comentario .data{
+    font-size: 12px;
+    color: #777 !important;
+    margin-top: 3px;
+    margin-bottom: 
 }
 .resposta{
     margin-left:40px;
