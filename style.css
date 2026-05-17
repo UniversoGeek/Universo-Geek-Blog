@@ -56,9 +56,10 @@ a:hover{
 }
 
 .data{
-    color:#666;
-
-    font-size:14px;
+    font-size: 12px;
+    color: #777 !important;
+    margin-top: 3px;
+    margin-bottom: 8px;
 }
 .comentario{
     border-top:1px solid #333;
