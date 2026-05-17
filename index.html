@@ -104,94 +104,93 @@
 
     function enviarNewsletter(){
 
-      const input =
-      document.getElementById("emailInput");
+    const input =
+    document.getElementById("emailInput");
 
-      const notif =
-      document.getElementById("notificacao");
+    const notif =
+    document.getElementById("notificacao");
 
-      if(!input.value.trim()){
+    if(!input.value.trim()){
         return;
-      }
+    }
 
-      tentativasNewsletter++;
+    tentativasNewsletter++;
 
-      localStorage.setItem(
+    localStorage.setItem(
         "newsletter_tentativas",
         tentativasNewsletter
-      );
+    );
 
-      input.value = "";
+    input.value = "";
 
-      notif.classList.add("ativa");
+    // 🔥 MOSTRA POPUP
+    notif.classList.add("ativa");
 
-      if(tentativasNewsletter === 1){
+    // 🧠 PROGRESSÃO
+
+    if(tentativasNewsletter === 1){
 
         notif.innerHTML =
         "registrado com sucesso.";
-        
-        setTimeout(() => {
-          notif.classList.remove("ativa");
-        }, 3000);
 
-      }
+    }
 
-      else if(tentativasNewsletter === 2){
+    else if(tentativasNewsletter === 2){
 
         notif.innerHTML =
         "registrado novamente.";
 
-      }
+    }
 
-      else if(tentativasNewsletter === 3){
+    else if(tentativasNewsletter === 3){
 
         notif.innerHTML =
         "requisição duplicada detectada.";
 
-      }
+    }
 
-      else if(tentativasNewsletter === 4){
+    else if(tentativasNewsletter === 4){
 
         notif.innerHTML =
         "aguarde confirmação manual.";
 
-      }
+    }
 
-      else if(tentativasNewsletter === 5){
+    else if(tentativasNewsletter === 5){
 
         mostrarMensagemSecreta();
 
-      }
-
     }
+
+}
 
     function mostrarMensagemSecreta(){
 
-      const notif =
-      document.getElementById("notificacao");
+    const notif =
+    document.getElementById("notificacao");
 
-      notif.innerHTML = `
+    notif.innerHTML = `
 
-      <strong>SYSTEM MESSAGE</strong>
+    <strong>SYSTEM MESSAGE</strong>
 
-      <br><br>
+    <br><br>
 
-      01100011 01101111 01101110 01110100 01100001 01110100 01100101
+    01100011 01101111 01101110 01110100 01100001 01110100 01100101
 
-      <br><br>
+    <br><br>
 
-      <a
-      href="docs/registro_caso_07.pdf"
-      target="_blank"
-      style="color:#00ff99;">
+    <a
+    href="docs/registro_caso_07.pdf"
+    target="_blank"
+    style="color:#00ff99;">
 
-      abrir arquivo
+    abrir arquivo
 
-      </a>
+    </a>
 
-      `;
+    `;
 
-    }
+}
 
     function clicarSino(){
 
