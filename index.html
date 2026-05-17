@@ -44,8 +44,8 @@
       >
         Inscrever
       </button>
-      
-      <p id="newsletterMensagem" class="newsletter-msg"></p>
+      <p id="newsletterMensagem" class="newsletter-msg">
+      </p>
 
     </div>
 
@@ -53,8 +53,6 @@
       id="notificacao"
       class="notificacao"
     ></div>
-
-    <!-- POSTS -->
 
     <div class="post-preview">
 
@@ -162,7 +160,9 @@
     const notif =
     document.getElementById("notificacao");
 
-    msg.innerHTML = `
+    notif.classList.add("ativa");
+
+    notif.innerHTML = `
 
     <strong>SYSTEM MESSAGE</strong>
 
@@ -184,7 +184,6 @@
     `;
 
 }
-
     function clicarSino(){
 
       alert("Sem novas notificações.");
