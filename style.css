@@ -197,11 +197,9 @@ a:hover{
 }
 
 .notificacao.ativa{
-
     opacity: 1;
-
     transform: translateY(0);
-
+    pointer-events: auto;
 }
 .newsletter-msg{
 
